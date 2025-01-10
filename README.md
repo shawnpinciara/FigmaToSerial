@@ -10,7 +10,7 @@ It runs on *any device that supports Google Chrome* (PCs, Phones, tablets...) an
 ## Why?
 
 I had to come up with a solution to control some external ligths using Figma at my job!
-I was inspired by (Figproxy)[https://edges.ideo.com/posts/figproxy] by (Dave Vondle)[https://edges.ideo.com/author/dave-vondle] but his version _works only on Mac_.... and i'm poor and don't have one, what a bummer!
+I was inspired by [Figproxy](https://edges.ideo.com/posts/figproxy) by [Dave Vondle](https://edges.ideo.com/author/dave-vondle) but his version _works only on Mac_.... and i'm poor and don't have one, what a bummer!
 
 ## Technically:
 Only inpulses can be sent == a button press.
@@ -36,7 +36,7 @@ Figma can receive a keyboard press to toggle buttons or perform actions,
 
 so you can _simulate_ a keystroke from the Arduino and send impulses to Figma.
 
-I actually want to do this from serial as well, because not all microcontrollers can emulate a keystroke... but there are some problems as f now (The javascript Keyboard Event should be _trusted_ to be able to be sent but i can't make it happen)[https://stackoverflow.com/questions/49518959/javascript-trigger-an-inputevent-istrusted-true] let me know if you can solve that!
+I actually want to do this from serial as well, because not all microcontrollers can emulate a keystroke... but there are some problems as f now [The javascript Keyboard Event should be _trusted_ to be able to be sent but i can't make it happen](https://stackoverflow.com/questions/49518959/javascript-trigger-an-inputevent-istrusted-true) let me know if you can solve that!
 
 
 ## Setup:

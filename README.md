@@ -12,6 +12,21 @@ It runs on *any device that supports Google Chrome* (PCs, Phones, tablets...) an
 I had to come up with a solution to control some external ligths using Figma at my job!
 I was inspired by [Figproxy](https://edges.ideo.com/posts/figproxy) by [Dave Vondle](https://edges.ideo.com/author/dave-vondle) but his version _works only on Mac_.... and i'm poor and don't have one, what a bummer!
 
+## Setup:
+1. Install the Chrome's extension on your browser
+2. Open a _prototype_ page on Figma
+3. Click anywhere to choose the Serial port and you are ready to go
+
+Remember that:
+- Buttons on Figma should open a link, and put the text you want instead of that link
+    - Handle the text accordingly reading from the Serial bus
+- Buttons on Figma can be clicked by external input if you set up them on a _keyboard stroke_ and emulate the keyboard stroke with some script or a microcontroller
+
+## Try it out:
+Some Figma examples:
+
+(Figma->Arduino)[]
+
 ## Technically:
 Only inpulses can be sent == a button press.
 I think no continous control can be sent as of now == no sliders?
@@ -39,17 +54,3 @@ so you can _simulate_ a keystroke from the Arduino and send impulses to Figma.
 I actually want to do this from serial as well, because not all microcontrollers can emulate a keystroke... but there are some problems as f now [The javascript Keyboard Event should be _trusted_ to be able to be sent but i can't make it happen](https://stackoverflow.com/questions/49518959/javascript-trigger-an-inputevent-istrusted-true) let me know if you can solve that!
 
 
-## Setup:
-1. Install the Chrome's extension on your browser
-2. Open a _prototype_ page on Figma
-3. Click anywhere to choose the Serial port and you are ready to go
-
-Remember that:
-- Buttons on Figma should open a link, and put the text you want instead of that link
-    - Handle the text accordingly reading from the Serial bus
-- Buttons on Figma can be clicked by external input if you set up them on a _keyboard stroke_ and emulate the keyboard stroke with some script or a microcontroller
-
-## Try it out:
-Some Figma examples:
-
-(Figma->Arduino)[]

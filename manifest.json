@@ -1,0 +1,30 @@
+{
+  "name": "FigmaToSerial",
+  "version": "1.0",
+  "description": "Send Figma buttons to your microcontroller through serial!",
+  "author": {
+    "email": "shawnpinciara@gmail.com"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "debugger",
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "<all_urls>"
+    ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "manifest_version": 2,
+  "content_scripts": [
+   {
+     "matches": ["*://*.figma.com/proto/*"],
+     "js": ["content-script.js"]
+   }],
+   "icons": {
+    "128": "figmaToSerial_icon_128.png"
+   }
+}

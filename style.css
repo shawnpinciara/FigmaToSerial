@@ -22,3 +22,61 @@ body {
   p {
     margin: 0;
   }
+
+  .f2s-popup {
+    width: 20rem;
+    font-family: system-ui, sans-serif;
+  }
+
+  .f2s-popup h1 {
+    font-size: 1rem;
+  }
+
+  .f2s-popup h2 {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .f2s-popup .status {
+    font-weight: bold;
+  }
+
+  .f2s-popup .status[data-connected="true"] {
+    color: #1a7f37;
+  }
+
+  .f2s-popup .field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .f2s-popup select {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .f2s-popup .row {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .f2s-popup .check {
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .f2s-popup .hint {
+    font-size: 0.75rem;
+    color: #555;
+    white-space: normal;
+  }
+
+  .f2s-popup #log {
+    font-family: monospace;
+    font-size: 0.75rem;
+    max-height: 8rem;
+    overflow-y: auto;
+  }

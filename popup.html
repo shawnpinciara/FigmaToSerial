@@ -2,24 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
-    <template id="li_template">
-      <li>
-        <a>
-          <h3 class="title">Tab Title</h3>
-          <p class="pathname">Tab Pathname</p>
-        </a>
-      </li>
-    </template>
+  <body class="f2s-popup">
+    <h1>FigProxyWEB</h1>
+    <p id="status" class="status">Checking status…</p>
 
-    <h1>Google Dev Docs</h1>
-    <button>Group Tabs</button>
-    <ul></ul>
+    <label class="field">Port
+      <select id="port">
+        <option value="">Loading…</option>
+      </select>
+    </label>
 
-    <!-- <script src="./popup.js" type="module"></script> -->
+    <div class="row">
+      <button id="refresh">Refresh</button>
+      <button id="newport">New port…</button>
+    </div>
+    <p id="porthint" class="hint"></p>
+
+    <label class="field">Baud rate
+      <select id="baud">
+        <option value="9600" selected>9600</option>
+        <option value="57600">57600</option>
+        <option value="115200">115200</option>
+      </select>
+    </label>
+
+    <div class="row">
+      <button id="connect">Connect serial</button>
+      <button id="disconnect">Disconnect</button>
+    </div>
+
+    <label class="row check">
+      <input type="checkbox" id="autoconnect" checked />
+      Auto-connect on first click in Figma
+    </label>
+
+    <h2>Last events</h2>
+    <ul id="log"></ul>
+
+    <p class="hint">Open a Figma prototype, press Connect and pick your Arduino
+    port. Buttons that open a link send the link text over serial
+    (newline-terminated). Anything the board sends back appears above.</p>
+
+    <script src="./lib/browser-api.js"></script>
+    <script src="./popup.js"></script>
   </body>
 </html>

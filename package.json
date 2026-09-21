@@ -1,0 +1,13 @@
+{
+  "name": "figproxyweb-extension",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser extension bridging Figma prototypes and microcontrollers over Web Serial.",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:chrome": "node build.mjs --target=chrome",
+    "build:firefox": "node build.mjs --target=firefox",
+    "clean": "node build.mjs --clean"
+  }
+}

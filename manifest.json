@@ -1,30 +1,41 @@
 {
-  "name": "FigmaToSerial",
-  "version": "1.0",
-  "description": "Send Figma buttons to your microcontroller through serial!",
-  "author": {
-    "email": "shawnpinciara@gmail.com"
-  },
+  "name": "FigProxyWEB",
+  "version": "1.1.0",
+  "description": "Send Figma prototype interactions to your microcontroller through serial (and back).",
+  "manifest_version": 3,
+  "minimum_chrome_version": "121",
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": "figmaToSerial_icon_128.png"
   },
-  "permissions": [
-    "debugger",
-    "webRequest",
-    "webRequestBlocking",
-    "tabs",
-    "<all_urls>"
-    ],
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "manifest_version": 2,
-  "content_scripts": [
-   {
-     "matches": ["*://*.figma.com/proto/*"],
-     "js": ["content-script.js"]
-   }],
-   "icons": {
+  "icons": {
     "128": "figmaToSerial_icon_128.png"
-   }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.figma.com/proto/*", "*://*.figma.com/design/*"],
+      "js": ["lib/browser-api.js", "content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": ["*://*.figma.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "figma_exit",
+        "enabled": true,
+        "path": "rules/figma-exit.json"
+      }
+    ]
+  }
 }
